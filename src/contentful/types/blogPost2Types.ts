@@ -17,8 +17,6 @@ export interface TypeBlogPage2Fields {
 }
 
 export interface IContentfulAsset {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-
   sys: {
     id: string;
   };
