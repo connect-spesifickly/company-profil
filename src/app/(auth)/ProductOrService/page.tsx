@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import * as React from "react";
 import { useState, useEffect } from "react";
@@ -5,8 +6,8 @@ import contentfulClient from "@/contentful/contentfulClient";
 import Image from "next/image";
 import { IContentfulAsset } from "@/contentful/types/blogPost2Types";
 import RichText from "@/components/richText/page";
+import { Document } from "@contentful/rich-text-types";
 export default function ProductOrService() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [article, setArticle] = useState<any>();
 
   const fetchArticle = async () => {
@@ -49,8 +50,96 @@ export default function ProductOrService() {
       <div className="">
         {article &&
           article.items?.map(
-            (blog, idx: React.Key | null | undefined | number) => (
-              <div className="" key={idx} id={blog.fields.title}>
+            (
+              blog: {
+                fields: {
+                  title:
+                    | string
+                    | number
+                    | bigint
+                    | boolean
+                    | React.ReactElement<
+                        unknown,
+                        string | React.JSXElementConstructor<any>
+                      >
+                    | Iterable<React.ReactNode>
+                    | Promise<
+                        | string
+                        | number
+                        | bigint
+                        | boolean
+                        | React.ReactPortal
+                        | React.ReactElement<
+                            unknown,
+                            string | React.JSXElementConstructor<any>
+                          >
+                        | Iterable<React.ReactNode>
+                        | null
+                        | undefined
+                      >
+                    | null
+                    | undefined;
+                  image: IContentfulAsset;
+                  body: Document | undefined;
+                  testimony:
+                    | string
+                    | number
+                    | bigint
+                    | boolean
+                    | React.ReactElement<
+                        unknown,
+                        string | React.JSXElementConstructor<any>
+                      >
+                    | Iterable<React.ReactNode>
+                    | React.ReactPortal
+                    | Promise<
+                        | string
+                        | number
+                        | bigint
+                        | boolean
+                        | React.ReactPortal
+                        | React.ReactElement<
+                            unknown,
+                            string | React.JSXElementConstructor<any>
+                          >
+                        | Iterable<React.ReactNode>
+                        | null
+                        | undefined
+                      >
+                    | null
+                    | undefined;
+                  tester:
+                    | string
+                    | number
+                    | bigint
+                    | boolean
+                    | React.ReactElement<
+                        unknown,
+                        string | React.JSXElementConstructor<any>
+                      >
+                    | Iterable<React.ReactNode>
+                    | React.ReactPortal
+                    | Promise<
+                        | string
+                        | number
+                        | bigint
+                        | boolean
+                        | React.ReactPortal
+                        | React.ReactElement<
+                            unknown,
+                            string | React.JSXElementConstructor<any>
+                          >
+                        | Iterable<React.ReactNode>
+                        | null
+                        | undefined
+                      >
+                    | null
+                    | undefined;
+                };
+              },
+              idx: React.Key | null | undefined | number
+            ) => (
+              <div className="" key={idx} id={blog.fields.title as string}>
                 <div>
                   <div className="relative isolate overflow-hidden bg-black px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
                     <div className="absolute inset-0 -z-10 overflow-hidden">
