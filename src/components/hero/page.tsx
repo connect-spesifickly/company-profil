@@ -1,13 +1,13 @@
 import * as React from "react";
 
-const santaImage = "/images/santa.webp";
 export function Hero() {
   return (
     <div>
       <div
         className="hero w-min-screen lg:h-screen md:h-[480px] h-[320px] "
         style={{
-          backgroundImage: `url(${santaImage})`,
+          backgroundImage:
+            "url(https://assets.ne.siemens.com/siemens/assets/api/uuid:88bfd937-4ce9-46db-93e1-37f3785535fb/width:2732/quality:high/SIE-Santa-Digital-Twin-VR-16x9-Header-AI-generated.webp)",
         }}
       >
         <div className="hero-overlay bg-opacity-60"></div>
